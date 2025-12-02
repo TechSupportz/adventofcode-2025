@@ -1,20 +1,17 @@
 {
-  "editor.formatOnSave": true,
-  "editor.codeActionsOnSave": {
-    "source.fixAll.biome": "always",
-    "source.organizeImports.biome": "explicit"
-  },
-  "[typescript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[javascript]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "[json]": {
-    "editor.defaultFormatter": "biomejs.biome"
-  },
-  "editor.defaultFormatter": "biomejs.biome",
-  "github.copilot.enable": {
-	"*": false,
-  }
+    "github.copilot.enable": {
+        "*": false,
+        "plaintext": false,
+        "markdown": true,
+        "scminput": false,
+        "yaml": true,
+        "javascript": true,
+        "python": true,
+        "typescript": false,
+        "typescriptreact": true,
+        "html": true,
+        "css": true,
+        "properties": true,
+        "solidity": true
+    }
 }
