@@ -5,7 +5,7 @@
   "main": "index.ts",
   "type": "module",
   "scripts": {
-    "test": "node --test src/index.test.ts",
+    "test": "bun src/scripts/runTests.ts",
     "test:bun": "bun test src/index.test.ts",
     "start": "node src/index.ts",
     "start:bun": "bun src/index.ts",
