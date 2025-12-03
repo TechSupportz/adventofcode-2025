@@ -1,15 +1,46 @@
 const first = (input: string) => {
-  console.log(input);
-  return 'solution 1';
-};
+    const ranges = input.split(",").map(range => range.split("-").map(rangeID => parseInt(rangeID)))
+    let invalidSum = 0
 
-const expectedFirstSolution = 'solution 1';
+    for (const range of ranges) {
+        for (let i = range[0]; i < range[1] + 1; i++) {
+            const idString = i.toString()
+            const idLength = idString.length
+
+            if (idLength % 2 !== 0) {
+                continue
+            }
+
+            const front = idString.slice(0, idLength / 2)
+            const back = idString.slice(idLength / 2)
+
+            if (front === back) {
+                invalidSum = invalidSum + i
+            }
+        }
+    }
+
+    return invalidSum
+}
+
+const expectedFirstSolution = 1227775554
 
 const second = (input: string) => {
-  console.log(input);
-  return 'solution 2';
-};
+    const ranges = input.split(",").map(range => range.split("-").map(rangeID => parseInt(rangeID)))
+    let invalidSum = 0
 
-const expectedSecondSolution = 'solution 2';
+    for (const range of ranges) {
+        for (let i = range[0]; i < range[1] + 1; i++) {
+            const idString = i.toString()
+            const idLength = idString.length
 
-export { expectedFirstSolution, expectedSecondSolution, first, second };
+            if ((idString + idString).indexOf(idString, 1) !== idLength) invalidSum = invalidSum + i
+        }
+    }
+
+    return invalidSum
+}
+
+const expectedSecondSolution = 4174379265
+
+export { expectedFirstSolution, expectedSecondSolution, first, second }
